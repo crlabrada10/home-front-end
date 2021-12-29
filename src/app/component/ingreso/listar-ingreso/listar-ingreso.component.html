@@ -1,0 +1,26 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Ingreso</th>
+      <th scope="col">Monto</th>
+      <th scope="col">Fecha</th>
+      <th scope="col"> Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+
+     <tr *ngFor="let credit of creditList, let pos = index">
+      <td>{{credit.nombre}}</td>
+      <td>{{credit.monto |currency}}</td>
+      <td>{{credit.fecha |date : 'd/M/yy'}} </td>
+      <td>
+        <button class="link-info" (click)="verDetalle(pos)">
+          <i class="fas fa-ellipsis-h "></i>
+        </button>
+        
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
